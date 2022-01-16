@@ -65,3 +65,7 @@ main {
   border-left: solid 1px black;
   border-right: solid 1px black;
 }
+
+.key-pressed {
+  background-color: forestgreen;
+}
