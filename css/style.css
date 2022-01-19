@@ -1,0 +1,71 @@
+body {
+  background-color: dimgrey;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: white;
+  width: 100%;
+  height: 40%;
+  display: grid;
+  grid-template-columns: 3fr 4fr 3fr;
+}
+
+.sount-effects {
+  display: none;
+}
+
+.five-key, .seven-key {
+  border: solid 1px black;
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+}
+
+.black-5keys, .white-5keys, .black-7keys, .white-7keys {
+  display: grid;
+}
+
+.black-5keys, .black-7keys {
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+}
+
+.black-5keys {
+  grid-template-columns: 3fr 3fr 2fr 3fr 3fr;
+}
+
+.black-7keys {
+  grid-template-columns: 3fr 3fr 2fr 3fr 2fr 3fr 3fr;
+}
+
+.white-5keys {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.white-7keys {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.black-key, .white-key {
+  all: unset;
+}
+
+.black-key {
+  background-color: black;
+  color: white;
+}
+
+.white-key {
+  background-color: white;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+}
+
+.key-pressed {
+  background-color: forestgreen;
+}
