@@ -5,9 +5,9 @@
     "webpack-cli": "^4.9.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "build-prod": "webpack -p --config webpack.config.js",
-    "predeploy": "npm run build && copy index.html dist && xcopy css dist\\css /E /H /C /I /Y && xcopy sfxs dist\\sfxs /E /H /C /I /Y",
+    "build": "webpack --config webpack.config.js && copy index.html dist && xcopy css dist\\css /E /H /C /I /Y && xcopy sfxs dist\\sfxs /E /H /C /I /Y",
+    "build-prod": "webpack -p --config webpack.config.js && copy index.html dist && xcopy css dist\\css /E /H /C /I /Y && xcopy sfxs dist\\sfxs /E /H /C /I /Y",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "homepage": "https://kuman514.github.io/PianoJS/"
