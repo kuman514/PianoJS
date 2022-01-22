@@ -1,30 +1,30 @@
-import { addKey } from './Keys';
+import Component from './Component';
+import KeyBoard from './KeyBoard';
 
-(function App() {
-  const keyName = [
-    'KeyZ', 'KeyS', 'KeyX', 'KeyD', 'KeyC',
-    'KeyV', 'KeyG', 'KeyB', 'KeyH', 'KeyN', 'KeyJ', 'KeyM', 
-    'Comma', 'KeyL', 'Period', 'Semicolon', 'Slash'
-  ];
+class App extends Component {
+  constructor(props, state) {
+    super(props, state);
 
-  for (let i = 0; i < 17; i++) {
-    const keyElem = document.querySelector(`#key-${i}`);
-    const sfxElem = document.querySelector(`#sfx-${i}`);
+    this.rootElement = document.querySelector('main');
 
-    const onDown = () => {
-      keyElem.classList.add('key-pressed');
-      sfxElem.play();
+    this.keyBoards = [
+      new KeyBoard({
+        keys: ['KeyZ', 'KeyS', 'KeyX', 'KeyD', 'KeyC']
+      }, {}),
+      new KeyBoard({
+        keys: ['KeyV', 'KeyG', 'KeyB', 'KeyH', 'KeyN', 'KeyJ', 'KeyM']
+      }, {}),
+      new KeyBoard({
+        keys: ['Comma', 'KeyL', 'Period', 'Semicolon', 'Slash']
+      }, {}),
+    ];
+
+    this.render = () => {
+      this.keyBoards.forEach((item) => {
+        this.rootElement.appendChild(item.render());
+      });
     };
-
-    const onUp = () => {
-      keyElem.classList.remove('key-pressed');
-      sfxElem.pause();
-      sfxElem.currentTime = 0;
-    };
-
-    keyElem.addEventListener('mousedown', onDown);
-    keyElem.addEventListener('mouseup', onUp);
-
-    addKey(keyName[i], onUp, onDown);
   }
-})();
+}
+
+(() => {(new App()).render();})();
