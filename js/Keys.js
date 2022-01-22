@@ -1,6 +1,6 @@
 const keys = {};
 
-export function addKey(keyName, onUp, onDown) {
+export function addKey({ keyName, onUp, onDown }) {
   Object.assign(keys, {
     [keyName]: {
       onDown: onDown,
