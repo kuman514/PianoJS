@@ -53,6 +53,7 @@ main {
 
 .black-key, .white-key {
   all: unset;
+  text-align: center;
 }
 
 .black-key {
@@ -68,4 +69,5 @@ main {
 
 .key-pressed {
   background-color: forestgreen;
+  color: yellow;
 }
