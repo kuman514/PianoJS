@@ -41,6 +41,8 @@ export default class BlackKey extends Component {
     });
 
     this.render = () => {
+      const text = document.createTextNode(props.keyName);
+      this.rootElement.appendChild(text);
       return this.rootElement;
     };
   }
